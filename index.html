@@ -12,13 +12,14 @@
 <body>
     <header>
         <a href="#" class="logo">Game Zone <span>.</span></a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
         <ul class="navigation">
-            <li><a href="#banner">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Top Games</a></li>
-            <li><a href="#expert">Expert</a></li>
-            <li><a href="#testimonials">Comment</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#banner" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#menu" onclick="toggleMenu();">Top Games</a></li>
+            <li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+            <li><a href="#testimonials" onclick="toggleMenu();">Comment</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
         </ul>
     </header>
     <section class="banner" id="banner">
@@ -206,14 +207,24 @@
                 <input type="submit" value="Send">
             </div>
         </div>
+        <div class="copyrightText">
+            <p>CopyRight 2021 <a href="#"> Develop By PUSHPAK</a>.
+                <BR> ALL RIGHT RESERVED </p>
+        </div>
     </section>
-
-
+    <!-------------java script-------------->
     <script type="text/javascript">
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             header.classList.toggle("sticky", window.scrollY > 0);
         });
+
+        function toggleMenu() {
+            const menuToggle = document.querySelector(".menuToggle");
+            const navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
     </script>
 
 
